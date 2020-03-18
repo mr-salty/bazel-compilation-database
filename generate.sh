@@ -90,7 +90,7 @@ readonly QUERY_CMD=(
   bazel query
     --noshow_progress
     --noshow_loading_progress
-    'kind("cc_(library|binary|test|inc_library|proto_library)", //...) union kind("objc_(library|binary|test)", //...)'
+    '(kind("cc_(library|binary|test|inc_library|proto_library)", //...) union kind("objc_(library|binary|test)", //...)) except attr("tags", "manual", //...)'
 )
 
 # Clean any previously generated files.
